@@ -47,23 +47,6 @@ class mysql {
         command => "/usr/bin/mysqladmin -uroot password root",
   }
 }
-class ftp {
-  package { "vsftpd":
-    require => Exec["apt-get update"],
-    ensure => present,
-  }
-  service { "vsftpd":
-    enable => true,
-    ensure => running,
-    require => Package["vsftpd"],
-  }
-  exec { "Set MySQL server root password":
-        require => Package["mysql-server"],
-        unless => "/usr/bin/mysqladmin -uroot -proot status",
-        command => "/usr/bin/mysqladmin -uroot password root",
-  }
-}
-
 include apache
 include php
 include mysql

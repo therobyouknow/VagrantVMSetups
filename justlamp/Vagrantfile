@@ -10,8 +10,6 @@ end
 config.vm.forward_port 80, 8080
 config.vm.share_folder "configs", "/configs", File.expand_path("../configs", __FILE__)
 
-config.vm.forward_port 22, 2222
-
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
