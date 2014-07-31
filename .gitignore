@@ -3,6 +3,7 @@
 
 !default
 !puphpet
+!puphpet/*
 !.vagrant
 !.gitignore
 !Vagrantfile
