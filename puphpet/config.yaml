@@ -9,8 +9,8 @@ vagrantfile-local:
         network:
             private_network: 192.168.56.101
             forwarded_port:
-                7yDMiU5wJjcv:
-                    host: '9623'
+                Llr8p77dkuZf:
+                    host: '9132'
                     guest: '22'
         provider:
             virtualbox:
@@ -32,7 +32,7 @@ vagrantfile-local:
                     - '--hiera_config /vagrant/puphpet/puppet/hiera.yaml'
                     - '--parser future'
         synced_folder:
-            NA8S4UbrAQuq:
+            pcmUL7J0U0oe:
                 source: ./
                 target: /var/www
                 sync_type: nfs
@@ -84,7 +84,7 @@ apache:
         - php
         - rewrite
     vhosts:
-        LorL791SwQF5:
+        1A5afkM7zoe2:
             servername: awesome.dev
             serveraliases:
                 - www.awesome.dev
@@ -103,9 +103,26 @@ apache:
             ssl_key: ''
             ssl_chain: ''
             ssl_certs_dir: ''
-        yD7QFzD87OQN:
-            servername: anl.dev
-            docroot: /var/www/anl.dev
+        4XiVHWBfhCu3:
+            servername: anl.drupal.dev
+            docroot: /var/www/anl.drupal.dev
+            port: '80'
+            setenv:
+                - 'APP_ENV dev'
+            override:
+                - All
+            options:
+                - Indexes
+                - FollowSymLinks
+                - MultiViews
+            custom_fragment: ''
+            ssl_cert: ''
+            ssl_key: ''
+            ssl_chain: ''
+            ssl_certs_dir: ''
+        e0pq3DQxXOXv:
+            servername: cqcsn.drupal.dev
+            docroot: /var/www/cqcsn.drupal.dev
             port: '80'
             setenv:
                 - 'APP_ENV dev'
@@ -124,8 +141,12 @@ apache:
     mod_spdy: 0
 nginx:
     install: 0
+    settings:
+        default_vhost: 1
+        proxy_buffer_size: 128k
+        proxy_buffers: '4 256k'
     vhosts:
-        VZ6fSBZ8SHm2:
+        wDaoQxj2t0HU:
             server_name: awesome.dev
             server_aliases:
                 - www.awesome.dev
@@ -175,13 +196,29 @@ mysql:
     root_password: '123'
     adminer: 0
     databases:
-        21EpminY1AVD:
+        GRLOlAmAOFqZ:
             grant:
                 - ALL
             name: dbname
             host: localhost
             user: dbuser
             password: '123'
+            sql_file: ''
+        xW75cD4RtYxP:
+            grant:
+                - ALL
+            name: anl
+            host: localhost
+            user: anl
+            password: anl
+            sql_file: ''
+        MJXQJzvChPIG:
+            grant:
+                - ALL
+            name: cqcsn
+            host: localhost
+            user: cqcsn
+            password: cqcsn
             sql_file: ''
 postgresql:
     install: 0
