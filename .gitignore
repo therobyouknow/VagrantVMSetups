@@ -2,7 +2,7 @@
 *
 
 !default
-!puphpet
+!puphpet/
 !puphpet/*
 !.vagrant
 !.gitignore
