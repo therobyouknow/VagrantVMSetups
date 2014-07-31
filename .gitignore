@@ -1,9 +1,12 @@
 # Ignore everything
-*
+#*
 
-!default
-!puphpet/
-!puphpet/*
-!.vagrant
-!.gitignore
-!Vagrantfile
+anl.dev
+awesome
+
+#!default
+#!puphpet/
+#!puphpet/*
+#!.vagrant
+#!.gitignore
+#!Vagrantfile
