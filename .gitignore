@@ -1,9 +1,7 @@
 # Ignore everything
 *
 
-#anl.dev
-#awesome
-
+# except for:
 !default
 !puphpet/
 !puphpet/*
